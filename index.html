@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anirudha Devdikar - Actor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.5; font-size: 15px; }
+        
+        nav { 
+            background: #1a1a1a; 
+            padding: 10px 0; 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 1000;
+        }
+        nav ul { 
+            list-style: none; 
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+            gap: 5px; 
+        }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 5px 12px; 
+            font-size: 14px; 
+            border-radius: 20px; 
+        }
+        nav a:hover { background: #e74c3c; }
+        
+        .hero { 
+            margin-top: 50px; 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('photo1.jpg'); 
+            background-size: cover; 
+            min-height: 90vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            color: white; 
+        }
+        .hero img { 
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+            border: 3px solid #e74c3c; 
+            margin-bottom: 15px; 
+            object-fit: cover;
+        }
+        .hero h1 { font-size: 2rem; margin-bottom: 5px; }
+        .hero .tagline { 
+            font-size: 1.2rem; 
+            color: #f39c12; 
+            margin-bottom: 10px; 
+        }
+        .hero .info { font-size: 0.9rem; margin-bottom: 20px; }
+        
+        .btn { 
+            display: inline-block; 
+            padding: 10px 25px; 
+            background: #e74c3c; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 25px; 
+            margin: 5px; 
+            font-size: 14px;
+        }
+        
+        section { 
+            padding: 40px 15px; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+        }
+        h2 { 
+            text-align: center; 
+            font-size: 1.6rem; 
+            margin-bottom: 25px; 
+            color: #2c3e50; 
+        }
+        h2::after { 
+            content: ''; 
+            display: block; 
+            width: 60px; 
+            height: 3px; 
+            background: #e74c3c; 
+            margin: 10px auto; 
+        }
+        
+        .stats { 
+            display: flex; 
+            justify-content: center; 
+            gap: 30px; 
+            background: #2c3e50; 
+            color: white; 
+            padding: 25px; 
+            flex-wrap: wrap; 
+        }
+        .stat h3 { font-size: 1.8rem; color: #f39c12; }
+        .stat p { font-size: 0.85rem; }
+        
+        .about { background: #f9f9f9; }
+        .about-content { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 20px; 
+            align-items: center; 
+        }
+        .about p { font-size: 0.95rem; margin-bottom: 10px; }
+        .skills { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 5px; 
+            margin-top: 10px; 
+        }
+        .skill { 
+            background: #2c3e50; 
+            color: white; 
+            padding: 4px 10px; 
+            border-radius: 15px; 
+            font-size: 0.75rem; 
+        }
+        .about img { 
+            width: 100%; 
+            border-radius: 10px; 
+            max-height: 300px;
+            object-fit: cover;
+        }
+        
+        .gallery { background: white; }
+        .photo-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+            gap: 10px; 
+        }
+        .photo-item { 
+            position: relative; 
+            aspect-ratio: 3/4; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            cursor: pointer;
+            background: #eee;
+        }
+        .photo-item img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: block;
+        }
+        
+        .projects { background: #f0f0f0; }
+        .project-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 15px; 
+        }
+        .project-card { 
+            background: white; 
+            border-radius: 10px; 
+            overflow: hidden; 
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1); 
+        }
+        .project-thumb { 
+            height: 140px; 
+            background: #2c3e50; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: white; 
+            font-size: 2rem;
+        }
+        .project-info { padding: 15px; }
+        .project-info h4 { font-size: 1.1rem; margin-bottom: 5px; }
+        .project-info .role { 
+            color: #e74c3c; 
+            font-size: 0.85rem; 
+            font-weight: 600; 
+        }
+        .project-info .director { 
+            font-size: 0.8rem; 
+            color: #666; 
+            font-style: italic; 
+        }
+        .watch-btn { 
+            display: inline-block; 
+            margin-top: 10px; 
+            padding: 6px 15px; 
+            background: #e74c3c; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 15px; 
+            font-size: 0.8rem; 
+        }
+        
+        .audition { 
+            background: #2c3e50; 
+            color: white; 
+            text-align: center; 
+        }
+        .audition h2 { color: white; }
+        .links { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 10px; 
+            margin: 20px 0; 
+        }
+        .link-btn { 
+            background: #e74c3c; 
+            color: white; 
+            padding: 10px 20px; 
+            border-radius: 20px; 
+            text-decoration: none; 
+            font-size: 0.85rem; 
+        }
+        .info-grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 15px; 
+            max-width: 500px; 
+            margin: 20px auto; 
+            font-size: 0.85rem; 
+        }
+        
+        .contact { background: #1a1a1a; color: white; text-align: center; }
+        .contact-info { margin: 20px 0; }
+        .contact-item { margin: 10px 0; font-size: 0.95rem; }
+        
+        footer { 
+            background: #0a0a0a; 
+            color: #666; 
+            text-align: center; 
+            padding: 15px; 
+            font-size: 0.8rem; 
+        }
+        
+        @media (max-width: 768px) {
+            .about-content { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.6rem; }
+            .info-grid { grid-template-columns: repeat(2, 1fr); }
+            .photo-grid { grid-template-columns: repeat(2, 1fr); }
+            nav a { font-size: 12px; padding: 4px 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#home">🏠 होम</a></li>
+            <li><a href="#about">👤 माहिती</a></li>
+            <li><a href="#photos">📷 फोटो</a></li>
+            <li><a href="#projects">🎬 प्रोजेक्ट्स</a></li>
+            <li><a href="#audition">🎥 ऑडिशन</a></li>
+            <li><a href="#contact">📞 संपर्क</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div>
+            <img src="photo1.jpg" alt="Anirudha Devdikar">
+            <h1>अनिरुद्ध देवडीकर</h1>
+            <p class="tagline">Anirudha Devdikar</p>
+            <p class="info">🎭 अभिनेता | वय: 29 | पुणे, महाराष्ट्र</p>
+            <a href="#projects" class="btn">माझे काम पहा</a>
+            <a href="#contact" class="btn" style="background: transparent; border: 2px solid white;">संपर्क करा</a>
+        </div>
+    </section>
+
+    <div class="stats">
+        <div class="stat"><h3>4+</h3><p>वेबसिरीज</p></div>
+        <div class="stat"><h3>2+</h3><p>चित्रपट</p></div>
+        <div class="stat"><h3>5+</h3><p>अल्बम गाणी</p></div>
+        <div class="stat"><h3>10+</h3><p>कौशल्ये</p></div>
+    </div>
+
+    <section id="about" class="about">
+        <h2>माझी ओळख</h2>
+        <div class="about-content">
+            <div>
+                <p>नमस्कार, मी अनिरुद्ध देवडीकर. मराठी चित्रपटसृष्टीतील एक उत्सुक अभिनेता.</p>
+                <p>मी मुक्ती, वन टू का फोर, अ‍ॅक्टर्स आणि बॅशिंग या वेबसिरीजमध्ये काम केले आहे.</p>
+                <p style="margin-top: 15px;"><strong>विशेष कौशल्ये:</strong></p>
+                <div class="skills">
+                    <span class="skill">Real Stunt</span>
+                    <span class="skill">Real Fight</span>
+                    <span class="skill">Swimming</span>
+                    <span class="skill">Horse Riding</span>
+                    <span class="skill">Driving</span>
+                    <span class="skill">Sports</span>
+                </div>
+            </div>
+            <div>
+                <img src="photo2.jpg" alt="Anirudha">
+            </div>
+        </div>
+    </section>
+
+    <section id="photos" class="gallery">
+        <h2>फोटो गॅलरी</h2>
+        <div class="photo-grid">
+            <div class="photo-item"><img src="photo1.jpg" alt="Photo 1"></div>
+            <div class="photo-item"><img src="photo2.jpg" alt="Photo 2"></div>
+            <div class="photo-item"><img src="photo3.jpg" alt="Photo 3"></div>
+            <div class="photo-item"><img src="photo4.jpg" alt="Photo 4"></div>
+            <div class="photo-item"><img src="photo5.jpg" alt="Photo 5"></div>
+            <div class="photo-item"><img src="photo6.jpg" alt="Photo 6"></div>
+            <div class="photo-item"><img src="photo7.jpg" alt="Photo 7"></div>
+            <div class="photo-item"><img src="photo8.jpg" alt="Photo 8"></div>
+            <div class="photo-item"><img src="photo9.jpg" alt="Photo 9"></div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>प्रोजेक्ट्स</h2>
+        
+        <h3 style="margin-bottom: 15px; color: #2c3e50;">🎬 वेबसिरीज</h3>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-thumb"><i class="fas fa-play-circle"></i></div>
+                <div class="project-info">
+                    <h4>मुक्ती</h4>
+                    <p class="role">मुख्य भूमिका</p>
+                    <a href="https://youtu.be/VKy5G3M5HBg" class="watch-btn" target="_blank">पहा</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-thumb"><i class="fas fa-play-circle"></i></div>
+                <div class="project-info">
+                    <h4>वन टू का फोर</h4>
+                    <p class="role">मुख्य भूमिका</p>
+                    <a href="https://youtu.be/KeqDqxl6Hm0" class="watch-btn" target="_blank">पहा</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-thumb"><i class="fas fa-play-circle"></i></div>
+                <div class="project-info">
+                    <h4>अ‍ॅक्टर्स</h4>
+                    <p class="director">जलिंदर कुंभार सर</p>
+                    <p class="role">मुख्य भूमिका</p>
+                    <a href="https://youtu.be/C7xbLRCRbEM" class="watch-btn" target="_blank">पहा</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-thumb"><i class="fas fa-play-circle"></i></div>
+                <div class="project-info">
+                    <h4>बॅशिंग</h4>
+                    <p class="director">योगेश गडगे</p>
+                    <p class="role">मुख्य भूमिका</p>
+                    <a href="https://youtu.be/DOKvfjyqmUI" class="watch-btn" target="_blank">पहा</a>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="margin: 30px 0 15px; color: #2c3e50;">🎞️ चित्रपट</h3>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-thumb" style="background: linear-gradient(135deg, #8e44ad, #3498db);"><i class="fas fa-crown"></i></div>
+                <div class="project-info">
+                    <h4>धर्मरक्षक अहिल्यादेवी होळकर</h4>
+                    <p class="director">सुशांत सोनवले सर</p>
+                    <p class="role">सरसेनापती बर्गळ</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-thumb" style="background: linear-gradient(135deg, #e74c3c, #f39c12);"><i class="fas fa-running"></i></div>
+                <div class="project-info">
+                    <h4>सजना</h4>
+                    <p class="role">प्रतिस्पर्धी भूमिका</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="audition" class="audition">
+        <h2>Casting Directors</h2>
+        <p style="margin-bottom: 20px;">माझे Showreel Links:</p>
+        <div class="links">
+            <a href="https://youtu.be/VKy5G3M5HBg" class="link-btn" target="_blank">मुक्ती</a>
+            <a href="https://youtu.be/KeqDqxl6Hm0" class="link-btn" target="_blank">वन टू का फोर</a>
+            <a href="https://youtu.be/C7xbLRCRbEM" class="link-btn" target="_blank">अ‍ॅक्टर्स</a>
+            <a href="https://youtu.be/DOKvfjyqmUI" class="link-btn" target="_blank">बॅशिंग</a>
+        </div>
+        <div class="info-grid">
+            <div><strong>वय</strong><br>29</div>
+            <div><strong>उंची</strong><br>5'8"</div>
+            <div><strong>भाषा</strong><br>मराठी/हिंदी</div>
+            <div><strong>ठिकाण</strong><br>पुणे</div>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.9rem;">Stunt | Fight | Swimming | Horse Riding | Driving | Sports</p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>संपर्क</h2>
+        <div class="contact-info">
+            <div class="contact-item">📧 anidevadikar008@gmail.com</div>
+            <div class="contact-item">📱 +91 98902 24073</div>
+            <div class="contact-item">📍 पुणे, महाराष्ट्र</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 अनिरुद्ध देवडीकर. सर्व हक्क राखीव.</p>
+    </footer>
+
+</body>
+</html>
