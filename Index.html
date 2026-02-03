@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+# Create final HTML with thumbnails and corrected roles
+html_content = '''<!DOCTYPE html>
 <html lang="mr">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +10,7 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', sans-serif; line-height: 1.5; font-size: 15px; }
-
+        
         nav { 
             background: #1a1a1a; 
             padding: 10px 0; 
@@ -32,7 +34,7 @@
             border-radius: 20px; 
         }
         nav a:hover { background: #e74c3c; }
-
+        
         .hero { 
             margin-top: 50px; 
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('photo1.jpg'); 
@@ -59,7 +61,7 @@
             margin-bottom: 10px; 
         }
         .hero .info { font-size: 0.9rem; margin-bottom: 20px; }
-
+        
         .btn { 
             display: inline-block; 
             padding: 10px 25px; 
@@ -70,7 +72,7 @@
             margin: 5px; 
             font-size: 14px;
         }
-
+        
         section { 
             padding: 40px 15px; 
             max-width: 1000px; 
@@ -90,7 +92,7 @@
             background: #e74c3c; 
             margin: 10px auto; 
         }
-
+        
         .stats { 
             display: flex; 
             justify-content: center; 
@@ -102,7 +104,7 @@
         }
         .stat h3 { font-size: 1.8rem; color: #f39c12; }
         .stat p { font-size: 0.85rem; }
-
+        
         .about { background: #f9f9f9; }
         .about-content { 
             display: grid; 
@@ -130,7 +132,7 @@
             max-height: 300px;
             object-fit: cover;
         }
-
+        
         .gallery { background: white; }
         .photo-grid { 
             display: grid; 
@@ -151,7 +153,7 @@
             object-fit: cover; 
             display: block;
         }
-
+        
         .projects { background: #f0f0f0; }
         .project-grid { 
             display: grid; 
@@ -170,9 +172,10 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         .project-thumb { 
-            height: 160px; 
+            height: 180px; 
             position: relative;
             overflow: hidden;
+            background: #2c3e50;
         }
         .project-thumb img {
             width: 100%;
@@ -223,13 +226,8 @@
             border-radius: 20px; 
             font-size: 0.85rem; 
             font-weight: 600;
-            transition: all 0.3s;
         }
-        .watch-btn:hover {
-            background: #c0392b;
-            transform: scale(1.05);
-        }
-
+        
         .audition { 
             background: #2c3e50; 
             color: white; 
@@ -259,11 +257,11 @@
             margin: 20px auto; 
             font-size: 0.85rem; 
         }
-
+        
         .contact { background: #1a1a1a; color: white; text-align: center; }
         .contact-info { margin: 20px 0; }
         .contact-item { margin: 10px 0; font-size: 0.95rem; }
-
+        
         footer { 
             background: #0a0a0a; 
             color: #666; 
@@ -271,7 +269,7 @@
             padding: 15px; 
             font-size: 0.8rem; 
         }
-
+        
         @media (max-width: 768px) {
             .about-content { grid-template-columns: 1fr; }
             .hero h1 { font-size: 1.6rem; }
@@ -281,7 +279,6 @@
             .project-grid { grid-template-columns: 1fr; }
         }
     </style>
-<base target="_blank">
 </head>
 <body>
 
@@ -353,50 +350,50 @@
 
     <section id="projects" class="projects">
         <h2>प्रोजेक्ट्स</h2>
-
+        
         <h3 style="margin-bottom: 20px; color: #2c3e50; font-size: 1.3rem;">🎬 वेबसिरीज</h3>
         <div class="project-grid">
-            <!-- मुक्ती - Face वाला thumbnail -->
+            <!-- मुक्ती - Second Lead Role -->
             <div class="project-card">
                 <div class="project-thumb">
-                    <img src="mukti_thumb.jpg" alt="मुक्ती">
+                    <img src="mukti_thumb.jpg" alt="मुक्ती" onerror="this.style.display='none'">
                     <div class="play-icon"><i class="fas fa-play"></i></div>
                 </div>
                 <div class="project-info">
                     <h4>मुक्ती (Mukti)</h4>
-                    <p class="role">सेकंड लीड रोल</p>
+                    <p class="role" style="color: #e74c3c; font-weight: bold;">⭐ सेकंड लीड रोल</p>
                     <a href="https://youtu.be/VKy5G3M5HBg" class="watch-btn" target="_blank">YouTube वर पहा</a>
                 </div>
             </div>
 
-            <!-- वन टू का फोर - Red jacket & black dress -->
+            <!-- वन टू का फोर - Character Role -->
             <div class="project-card">
                 <div class="project-thumb">
-                    <img src="onetwoka4_thumb.jpg" alt="वन टू का फोर">
+                    <img src="onetwoka4_thumb.jpg" alt="वन टू का फोर" onerror="this.style.display='none'">
                     <div class="play-icon"><i class="fas fa-play"></i></div>
                 </div>
                 <div class="project-info">
                     <h4>वन टू का फोर</h4>
-                    <p class="role">कॅरेक्टर रोल</p>
+                    <p class="role">🎭 कॅरेक्टर रोल</p>
                     <a href="https://youtu.be/KeqDqxl6Hm0" class="watch-btn" target="_blank">YouTube वर पहा</a>
                 </div>
             </div>
 
-            <!-- अ‍ॅक्टर्स - Yellow dress वाली मुलगी -->
+            <!-- अ‍ॅक्टर्स - Character Role -->
             <div class="project-card">
                 <div class="project-thumb">
-                    <img src="actors_thumb.jpg" alt="अ‍ॅक्टर्स">
+                    <img src="actors_thumb.jpg" alt="अ‍ॅक्टर्स" onerror="this.style.display='none'">
                     <div class="play-icon"><i class="fas fa-play"></i></div>
                 </div>
                 <div class="project-info">
                     <h4>अ‍ॅक्टर्स (Actors)</h4>
                     <p class="director">जलिंदर कुंभार सर</p>
-                    <p class="role">कॅरेक्टर रोल</p>
+                    <p class="role">🎭 कॅरेक्टर रोल</p>
                     <a href="https://youtu.be/C7xbLRCRbEM" class="watch-btn" target="_blank">YouTube वर पहा</a>
                 </div>
             </div>
 
-            <!-- बॅशिंग -->
+            <!-- बॅशिंग - Character Role -->
             <div class="project-card">
                 <div class="project-thumb" style="background: linear-gradient(135deg, #2c3e50, #e74c3c);">
                     <div class="play-icon" style="opacity: 1;"><i class="fas fa-play"></i></div>
@@ -404,7 +401,7 @@
                 <div class="project-info">
                     <h4>बॅशिंग (Bashing)</h4>
                     <p class="director">योगेश गडगे</p>
-                    <p class="role">कॅरेक्टर रोल</p>
+                    <p class="role">🎭 कॅरेक्टर रोल</p>
                     <a href="https://youtu.be/DOKvfjyqmUI" class="watch-btn" target="_blank">YouTube वर पहा</a>
                 </div>
             </div>
@@ -415,23 +412,23 @@
             <!-- धर्मरक्षक अहिल्यादेवी होळकर - Poster -->
             <div class="project-card">
                 <div class="project-thumb">
-                    <img src="ahilyabai_poster.jpg" alt="धर्मरक्षक अहिल्यादेवी होळकर">
+                    <img src="ahilyabai_poster.jpg" alt="धर्मरक्षक अहिल्यादेवी होळकर" onerror="this.style.display='none'">
                 </div>
                 <div class="project-info">
                     <h4>धर्मरक्षक अहिल्यादेवी होळकर</h4>
                     <p class="director">सुशांत सोनवले सर</p>
-                    <p class="role">सरसेनापती बर्गळ (सततची भूमिका)</p>
+                    <p class="role">⚔️ सरसेनापती बर्गळ (सततची भूमिका)</p>
                 </div>
             </div>
 
             <!-- सजना - Poster -->
             <div class="project-card">
                 <div class="project-thumb">
-                    <img src="sajana_poster.jpg" alt="सजना">
+                    <img src="sajana_poster.jpg" alt="सजना" onerror="this.style.display='none'">
                 </div>
                 <div class="project-info">
                     <h4>सजना (Sajana)</h4>
-                    <p class="role">प्रतिस्पर्धी भूमिका (क्रीडा विषयक)</p>
+                    <p class="role">🏃 प्रतिस्पर्धी भूमिका (क्रीडा विषयक)</p>
                 </div>
             </div>
         </div>
@@ -469,4 +466,23 @@
     </footer>
 
 </body>
-</html>
+</html>'''
+
+# Save the final file
+output_path = '/mnt/kimi/output/anirudha_final_website.html'
+with open(output_path, 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("✅ फायनल Website तयार!")
+print("\n🎬 Updated Roles:")
+print("• मुक्ती: ⭐ सेकंड लीड रोल")
+print("• वन टू का फोर: 🎭 कॅरेक्टर रोल") 
+print("• अ‍ॅक्टर्स: 🎭 कॅरेक्टर रोल")
+print("• बॅशिंग: 🎭 कॅरेक्टर रोल")
+print("\n🖼️ Thumbnails:")
+print("• mukti_thumb.jpg (Face)")
+print("• onetwoka4_thumb.jpg (Red jacket)")
+print("• actors_thumb.jpg (Yellow dress)")
+print("• ahilyabai_poster.jpg (Poster)")
+print("• sajana_poster.jpg (Poster)")
+print(f"\n📁 Download: {output_path}")
